@@ -1,0 +1,123 @@
+@keyframes anim {
+  0% {width: 25px; opacity: 0;}
+  100% {width: 475px; opacity: 1;}
+}
+
+#logo {
+  animation: anim 5s;
+  width: 475px;
+}
+
+body {
+  font-family: Poppins, serif;
+  background-image: urL("../images/concrete_seamless.png");
+  background-color: #f1f1f1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+a {
+  color: #0000FF;
+}
+
+a:visited {
+  color: #0000FF;
+}
+
+.card > header {
+  background-color: #288088;
+  border: 2px solid #45ADAD;
+  padding: 20px 0;
+  border-radius: 50px 50px 0 0;
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-radius: 50px 50px 0 0;
+  flex: 0 0 450px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery > img {
+  border: 10px solid #50C7C7;
+  margin: 10px;
+  width: 300px;
+}
+
+@media only screen and (min-width: 900px) {
+  body > header {
+    position: sticky;
+    top: 0;
+    justify-content: left;
+    flex-direction: row;
+  }
+  nav {
+    flex-basis: 100%;
+  }
+  .nav_links {
+    justify-content: right;
+    flex-direction: row;
+  }
+  .card {
+    flex: 0 0 275px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  #logo {
+    animation: anim 0s;
+  }
+}
+
+@media print {
+  body {
+    font-family: Arial, Helvetica;
+    background-image: none;
+  }
+  .nav_links {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .pricing {
+    flex-wrap: nowrap;
+    align-items: end;
+  }
+  .card {
+    border: 2px solid #45ADDD;
+    flex: 1 1 325px;
+  }
+  #gallery {
+    display: none;
+  }
+  .gallery {
+    display: none;
+  }
+  .card > ul > li:nth-child(2)::after {
+    content: "👍";
+  }
+}
